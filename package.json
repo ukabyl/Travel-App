@@ -1,0 +1,26 @@
+{
+  "name": "travel-app",
+  "version": "1.0.0",
+  "description": "Travel App project",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ukabyl/Travel-App.git"
+  },
+  "keywords": [
+    "Travel",
+    "App",
+    "Udacity",
+    "Frontend",
+    "Nanodegree"
+  ],
+  "author": "Umirzak Kabylbekov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ukabyl/Travel-App/issues"
+  },
+  "homepage": "https://github.com/ukabyl/Travel-App#readme"
+}
