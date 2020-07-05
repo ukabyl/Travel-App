@@ -1,7 +1,7 @@
 # Travel App
-```
+
 This is my last project on my Udacity's Nanodegree Frontend program about travel application. This project allows you to plan your trip, to get current weather on the trip date and an image of the location you've entered.
-```
+
 ## Getting Started
 
 1. Download or clone the project:
