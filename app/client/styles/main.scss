@@ -1,7 +1,29 @@
 @import './materialize/materialize.scss';
 
+@font-face {
+    font-family: "Galada-Regular";
+    src: url("../assets/fonts/Galada-Regular.woff") format("woff"),
+    url("../assets/fonts/Galada-Regular.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@keyframes toDown {
+    from { height: 0; }
+    to { height: 100%; }
+}
+
+@keyframes appear {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+body{
+    font-family: 'Galada-Regular';
+}
+
 .app {
-    background-image: url('../assets/hawaii.jpg');
+    background-image: url('../assets/images/cameron.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -12,15 +34,18 @@
     position: relative;
     nav{
         z-index: 2;
+        background-color: rgba(#26a69a, .2);
     }
     &:before{
+        animation: toDown  3s ease-in-out;
         position: absolute;
-        top: 0;
+        top: 50%;
         bottom: 0;
         right: 0;
-        left: 0;
+        left: 50%;
         z-index: 1;
-        background-color: rgba(0,0,0,.5);
+        transform: translate(-50%, -50%);
+        background-color: rgba(0,0,0,.6);
         content: '';
         display: block;
         width: 100%;
@@ -29,6 +54,8 @@
     .footer {
         padding-top: 0;
         z-index: 2;
+        background-color: transparent;
+        box-shadow: 0 0px 10px 2px rgba(0,0,0,.5);
         &-copyright {
             padding: 0;
         }
@@ -38,10 +65,27 @@
 .author{
     &-link{
         text-decoration: none;
-        color: #fff;
+        color: #26a69a;
     }
 }
 
 .content{
-    
+    z-index: 2;
+}
+
+.form{
+    background-color: rgba(#26a69a,.2);
+    padding: 1rem 2rem;
+    border-radius: 25px;
+    animation-name: appear;
+    animation-duration: 3s;
+    animation-timing-function: ease;
+    input{
+        color: #fff;
+        font-family: 'Galada-Regular';
+    }
+    label{
+        color: #fff;
+        font-size: 1.2rem;
+    }
 }
