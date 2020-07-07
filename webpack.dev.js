@@ -7,6 +7,7 @@ const configs = {
     entry: path.resolve(__dirname, 'app/client/scripts/index.js'),
     mode: 'development',
     devtool: 'source-map',
+    stats: 'verbose',
     module: {
         rules: [
             {
