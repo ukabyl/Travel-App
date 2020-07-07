@@ -1,4 +1,5 @@
 import { errorHandler } from './errorHandler';
+import { transformData } from './utils';
 
 // Import services
 import GeonamesService from './services/geonames-service';
@@ -23,7 +24,15 @@ const formHandler = async (data) => {
         const image = await pixabayService.getImage(geoNames.name);
         const flag = await restcountriesService.getFlag(geoNames.countryCode);
 
-        
+        const transformedData = transformData({
+            weather,
+            image,
+            flag,
+            geoNames,
+            data
+        });
+
+        console.log(transformedData)
     
     } catch(e) {
         errorHandler(e.message);

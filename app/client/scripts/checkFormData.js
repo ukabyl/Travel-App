@@ -1,4 +1,4 @@
-import { upperCaseArray } from "./utils";
+import { upperCaseArray, daysLeft } from "./utils";
 
 const checkFormData = (data) => {
     const errors = [];
@@ -18,6 +18,7 @@ const checkFormData = (data) => {
         const endDateInMs = Date.parse(data['endDate']);
         const rest = endDateInMs - startDateInMs;
         rest < 0 ? errors.push(`<p>Your dates shoudn't be <span class="error-field">start date ${data['startDate']}</span> and <span class="error-field">end date ${data['endDate']}</span></p>`) : null;
+        daysLeft(data['startDate']) < 0 ? errors.push(`<p>You can't choose <span class="error-field">start date ${data['startDate']}</span>. It's past. </p>`) : null;
     }
 
     return errors;
