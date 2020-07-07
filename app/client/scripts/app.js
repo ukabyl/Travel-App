@@ -3,21 +3,9 @@ import '../styles/main.scss';
 import '../libs/materialize/materialize.js';
 import './current-date.js';
 
-// Import services
-import GeonamesService from './services/geonames-service';
-import WeatherbitService from './services/weatherbit-service';
-import PixabayService from './services/pixabay-service';
-import RestcountriesService from './services/restcountries-service';
-
 import { formHandler } from './formHandler';
 import { checkFormData } from './checkFormData';
 import { errorHandler } from './errorHandler';
-
-// Initilize services
-const geonameService = new GeonamesService();
-const weatherbitService = new WeatherbitService();
-const pixabayService = new PixabayService();
-const restcountriesService = new RestcountriesService();
 
 // Initialize plugins&events after content loaded
 document.addEventListener('DOMContentLoaded', () => {
@@ -47,15 +35,10 @@ document.addEventListener('DOMContentLoaded', () => {
         };
         
         const errors = checkFormData(data);
-        errors.length > 0 ? errorHandler(errors) : formHandler(data);
-        
-
-        geonameService.getGeoName('zarafshan').then((data) => {
-            weatherbitService.getWeather(data.lat, data.lng)
-            .then(data => console.log(data))
-            pixabayService.getImage(data.name).then(data => console.log(data));
-            restcountriesService.getFlag(data.countryCode).then(data => console.log(data));
-            console.log(data)
-        });
+        if(errors.length > 0) {
+            return errorHandler(errors);
+        } else {
+            formHandler(data);
+        }
     });
 });
