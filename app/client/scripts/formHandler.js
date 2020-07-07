@@ -22,17 +22,12 @@ const formHandler = async (data) => {
         const weather = await weatherbitService.getWeather(geoNames.lat, geoNames.lng);
         const image = await pixabayService.getImage(geoNames.name);
         const flag = await restcountriesService.getFlag(geoNames.countryCode);
+
+        
     
     } catch(e) {
         errorHandler(e.message);
     }
-    // geonameService.getGeoName(data.toLocation).then((data) => {
-    //     weatherbitService.getWeather(data.lat, data.lng)
-    //     .then(data => console.log(data))
-    //     pixabayService.getImage(data.name).then(data => console.log(data));
-    //     restcountriesService.getFlag(data.countryCode).then(data => console.log(data));
-    //     console.log(data)
-    // });
 }
 
 export { formHandler };

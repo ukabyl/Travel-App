@@ -19,7 +19,7 @@
 }
 
 body{
-    font-family: 'Galada-Regular';
+    font-family: 'Galada-Regular', sans-serif;
 }
 
 .app {
@@ -82,7 +82,7 @@ body{
     animation-timing-function: ease;
     input{
         color: #fff;
-        font-family: 'Galada-Regular';
+        font-family: 'Galada-Regular', sans-serif;
     }
     label{
         color: #fff;
@@ -147,6 +147,13 @@ body{
         color: #000;
         text-transform: capitalize;
     }
+}
+
+.btn{
+    font-family: 'Galada-Regular', sans-serif;
+    min-width: 200px;
+    border-radius: 10px;
+    margin-top: 1rem;
 }
 
 #error-fields{
