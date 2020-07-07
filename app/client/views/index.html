@@ -21,23 +21,23 @@
         <div class="content">
             <div class="container">
                 <div id="today"></div>
-                <div class="form">
+                <div class="form" id="form">
                     <div class="row" style="margin-bottom: 0;">
                         <form class="col s12">
                             <div class="row">
-                                <div class="input-field col s12 m3">
+                                <div class="input-field col s12 m6">
                                     <input id="from" type="text" class="validate">
                                     <label for="from">Direction from</label>
                                 </div>
-                                <div class="input-field col s12 m3">
+                                <div class="input-field col s12 m6">
                                     <input id="to" type="text" class="validate">
                                     <label for="to">Direction to</label>
                                 </div>
-                                <div class="input-field col s12 m3">
+                                <div class="input-field col s12 m6">
                                     <input type="text" id="start-date" class="date validate">
                                     <label for="start-date">Start trip</label>
                                 </div>
-                                <div class="input-field col s12 m3">
+                                <div class="input-field col s12 m6">
                                     <input type="text" id="end-date" class="date validate">
                                     <label for="end-date">End trip</label>
                                 </div>
@@ -89,6 +89,18 @@
                 </ul>
             </div>
         </div>
+
+        <div id="errors" class="modal">
+            <div class="modal-content">
+                <h2 class="error-title">Oops... Something was wrong!</h2>
+                <div id="error-fields"></div>
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+              </div>
+        </div>
+
+        
     </div>
 
     <script src="main.js"></script>

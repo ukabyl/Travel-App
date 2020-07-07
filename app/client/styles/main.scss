@@ -1,4 +1,4 @@
-@import './materialize/materialize.scss';
+@import '../libs/materialize/materialize.scss';
 
 @font-face {
     font-family: "Galada-Regular";
@@ -123,4 +123,34 @@ body{
         font-size: 1.3rem;
         display: block;
     }
+}
+
+#errors{
+    &.modal{
+        border-radius: 20px;
+        background-color: #26a69a;
+        &-content{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+    }
+}
+
+.error{
+    &-title{
+        text-align: center;
+        color: floralwhite;
+        font-size: 2rem;
+    }
+    &-field{
+        color: #000;
+        text-transform: capitalize;
+    }
+}
+
+#error-fields{
+    color: floralwhite;
+    font-size: 1.3rem;
+    text-align: center;
 }
