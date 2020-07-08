@@ -27,19 +27,19 @@
                             <div class="row">
                                 <div class="input-field col s12 m6">
                                     <input autocomplete="off" id="from" type="text" class="validate">
-                                    <label for="from">Direction from</label>
+                                    <label class="active" for="from">Delhi</label>
                                 </div>
                                 <div class="input-field col s12 m6">
                                     <input autocomplete="off" id="to" type="text" class="validate">
-                                    <label for="to">Direction to</label>
+                                    <label class="active" for="to">Udaipur</label>
                                 </div>
                                 <div class="input-field col s12 m6">
                                     <input type="text" id="start-date" class="date validate">
-                                    <label for="start-date">Start trip</label>
+                                    <label class="active" for="start-date">Start trip</label>
                                 </div>
                                 <div class="input-field col s12 m6">
                                     <input type="text" id="end-date" class="date validate">
-                                    <label for="end-date">End trip</label>
+                                    <label class="active" for="end-date">End trip</label>
                                 </div>
                                 <div class="col s12 center">
                                     <button class="btn waves-effect waves-light btn-large" type="submit">
@@ -65,18 +65,9 @@
             </div>
         </footer>
 
-        <div id="info-trip" class="modal modal-fixed-footer">
-            <div class="modal-content">
-                <h4>Modal Header</h4>
-                <p>A bunch of text</p>
-            </div>
-            <div class="modal-footer">
-                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
-            </div>
-        </div>
-
         <div id="list-of-trips" class="modal bottom-sheet">
             <div class="modal-content">
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
                 <ul class="collection" id="list-of-trips-content"></ul>
             </div>
         </div>

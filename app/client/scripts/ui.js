@@ -11,7 +11,7 @@ export default class Ui {
             </div>
             <ul>
                 <li>Your trip to <span>${data.departure_point}</span> is <span>${data.days_left}</span> days away</li>
-                <li>Departure from: <span>${data.departure_from}</span></li>
+                <li>Delhi: <span>${data.departure_from}</span></li>
                 <li>Departure time: <span>${data.departure_time}</span></li>
                 <li>Return: <span>${data.return}</span></li>
                 <li>Time relax <span>${data.time_relax}</span> days</li>

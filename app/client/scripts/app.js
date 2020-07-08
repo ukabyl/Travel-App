@@ -14,7 +14,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const modals = document.querySelectorAll('.modal');
 
     M.Datepicker.init(datePcikers);
-    M.Modal.init(modals);
+    M.Modal.init(modals, {
+        dismissible: false
+    });
+    M.updateTextFields();
 
     // Initialize vars from DOM
     const form = document.getElementById('form');

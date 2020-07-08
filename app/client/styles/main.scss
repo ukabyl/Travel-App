@@ -200,6 +200,13 @@ body{
     text-align: center;
 }
 
+#list-of-trips{
+    .modal-close{
+        text-align: right;
+        display: block;
+    }
+}
+
 .list-icon{
     background-position: center;
     background-size: cover;
