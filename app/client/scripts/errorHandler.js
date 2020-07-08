@@ -1,7 +1,5 @@
 const errorsModal = document.getElementById('errors');
 const errorFields = document.getElementById('error-fields');
-M.Modal.init(errorsModal);
-
 
 const errorHandler = (errors) => {
     errorFields.innerHTML = '';

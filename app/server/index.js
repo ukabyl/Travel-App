@@ -1,10 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const async = require('express-async-errors');
-const fetch = require('node-fetch');
 
-const data = {};
+const data = [];
 
 const app = express();
 app.use(cors());
@@ -22,8 +20,26 @@ app.get('/', function (req, res) {
     res.sendFile('dist/index.html')
 })
 
-app.post('/add', addInfo);
+app.post('/add', addTrip);
 
-function addInfo(req, res) {
-    res.send(data);
+function addTrip(req, res) {
+    if(!req.body) {
+        res.status(400).json('Bad Request');
+    } else {
+        const trip = req.body;
+        if(data.length) {
+            let isHave = false;
+            data.forEach(dataTrip => {
+                if(dataTrip.departure_point === trip.departure_point) {
+                    isHave = true;
+                }
+            })
+            if(!isHave) {
+                data.push(trip);
+            }
+        } else {
+            data.push(trip);
+        }
+        res.status(201).send(data);
+    }
 }

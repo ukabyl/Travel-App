@@ -23,6 +23,7 @@ body{
 }
 
 .app {
+    background-color: #000;
     background-image: url('../assets/images/cameron.jpg');
     background-size: cover;
     background-repeat: no-repeat;
@@ -71,6 +72,39 @@ body{
 
 .content{
     z-index: 2;
+    text-align: center;
+    &__title{
+        text-align: center;
+    }
+    &__picture{
+        max-width: 100%;
+        width: 400px;
+        height: 200px;
+    }
+}
+
+.country-info{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img{
+        width: 60px;
+        height: 30px;
+        margin-right: 20px;
+    }
+}
+
+#content{
+    ul{
+        font-size: 1.3rem;
+        text-align: center;
+        span{
+            color: navy;
+        }
+    }
+    &-fields{
+        text-align: center;
+    }
 }
 
 .form{
@@ -163,5 +197,14 @@ body{
 #error-fields{
     color: floralwhite;
     font-size: 1.3rem;
+    text-align: center;
+}
+
+.list-icon{
+    background-position: center;
+    background-size: cover;
+}
+.no-trips{
+    padding: 1rem;
     text-align: center;
 }

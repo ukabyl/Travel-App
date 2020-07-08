@@ -1,6 +1,8 @@
 import { errorHandler } from './errorHandler';
 import { transformData } from './utils';
 
+import Ui from './ui';
+
 // Import services
 import GeonamesService from './services/geonames-service';
 import WeatherbitService from './services/weatherbit-service';
@@ -12,6 +14,8 @@ const geonameService = new GeonamesService();
 const weatherbitService = new WeatherbitService();
 const pixabayService = new PixabayService();
 const restcountriesService = new RestcountriesService();
+
+const ui = new Ui();
 
 const formHandler = async (data) => {
     try {
@@ -32,7 +36,16 @@ const formHandler = async (data) => {
             data
         });
 
-        console.log(transformedData)
+        ui.buildUi(transformedData);
+        const res = await fetch('http://localhost:8080/add', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(transformedData)
+        });
+        const trips = await res.json();
+        localStorage.setItem('trips', JSON.stringify(trips));
     
     } catch(e) {
         errorHandler(e.message);

@@ -6,6 +6,7 @@ import './current-date.js';
 import { formHandler } from './formHandler';
 import { checkFormData } from './checkFormData';
 import { errorHandler } from './errorHandler';
+import { buildList } from './ui';
 
 // Initialize plugins&events after content loaded
 document.addEventListener('DOMContentLoaded', () => {
@@ -20,10 +21,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const fromLocation = document.getElementById('from');
     const toLocation = document.getElementById('to');
     const startDate = document.getElementById('start-date');
-    const endDate = document.getElementById('end-date');    
+    const endDate = document.getElementById('end-date');
+    const listOfTripsTrigger = document.getElementById('list-of-trips-trigger');    
 
     startDate.addEventListener('focus', () => startDate.click());
     endDate.addEventListener('focus', () => endDate.click());
+    listOfTripsTrigger.addEventListener('click', buildList);
 
     form.addEventListener('submit', (e) => {
         e.preventDefault();

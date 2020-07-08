@@ -40,13 +40,7 @@ const configs = {
         inline: true,
         port: 3000,
         contentBase: path.resolve(__dirname, 'app/client/views/'),
-        watchContentBase: true,
-        proxy: {
-            '/api': {
-                target: 'http://localhost:3000/api/',
-                secure: false
-            }
-        },
+        watchContentBase: true
     },
     plugins: [
         new HTMLWebpackPlaugin({

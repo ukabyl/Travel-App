@@ -18,25 +18,23 @@ function daysLeft(startDate) {
 }
 
 function transformData({ weather, image, flag, geoNames, data }) {
-    console.log('weather', weather)
-    console.log('image',image)
-    console.log('flag',flag)
-    console.log('geoNames',geoNames)
-    console.log('data',data)
-    // `Your trip to ${trip.city} is ${daysLeft} days away`
+    if(!weather) {
+        return {};
+    }
     return {
-        departure_point: data.fromLocation,
+        departure_from: data.fromLocation,
         departure_point: geoNames.name,
         country: geoNames.countryName,
-        departure_time: data.startData,
+        departure_time: data.startDate,
         return: data.endDate,
         time_relax: _quantityOfDays(data.startDate, data.endDate),
         days_left: daysLeft(data.startDate),
-        image: image.hits[0].largeImageURL,
+        image: image.hits[0] ? image.hits[0].largeImageURL : '',
         flag: flag,
         sunrise: weather[0].sunrise,
         sunset: weather[0].sunset,
-        temp: weather[0].app_temp
+        temp: weather[0].app_temp,
+        weather_desc: weather[0].weather.description
         
     }
 }
