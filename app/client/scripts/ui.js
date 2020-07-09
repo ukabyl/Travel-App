@@ -1,3 +1,4 @@
+// Create template with received data & open this template in a modal
 export default class Ui {
     buildUi(data) {
         const _contentModal = document.getElementById('content');
@@ -27,6 +28,7 @@ export default class Ui {
 const ui = new Ui();
 const listContent = document.getElementById('list-of-trips-content');
 
+// Create template with the data from local storage & open this template in a modal for the List of Trips
 export const buildList = () => {
     const trips = JSON.parse(localStorage.getItem('trips'));
     let lists = '';

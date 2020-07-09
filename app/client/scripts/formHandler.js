@@ -17,6 +17,7 @@ const restcountriesService = new RestcountriesService();
 
 const ui = new Ui();
 
+// Handling form
 const formHandler = async (data) => {
     try {
         const geoNames = await geonameService.getGeoName(data.toLocation);

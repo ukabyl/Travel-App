@@ -1,3 +1,4 @@
+// Require neccessary packages
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
@@ -16,12 +17,14 @@ app.listen(PORT, () => {
     console.log('Server is listening on port ' + PORT);
 });
 
+// Sending static file
 app.get('/', function (req, res) {
     res.sendFile('dist/index.html')
 })
 
 app.post('/add', addTrip);
 
+// Handling endpoint /add for saving received data from client request
 function addTrip(req, res) {
     if(!req.body) {
         res.status(400).json('Bad Request');

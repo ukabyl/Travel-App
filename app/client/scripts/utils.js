@@ -1,11 +1,16 @@
+// Split an uppercase styled text to an array
 const upperCaseArray = (text) => text.replace(/([A-Z]+)/g, ",$1").replace(/^,/, "").split(",");
 
+// Convert milleseconds to days
 const _mlsToDays = (mls) => (mls / (60*60*24*1000)) % 365;
 
+// Count a quantity of days from start date to end date
 const _quantityOfDays = (startDate, endDate) => _mlsToDays(Date.parse(endDate) - Date.parse(startDate));
 
+// Count quantity of days from current date to start date
 const daysLeft = (startDate) => Math.ceil(_mlsToDays(Date.parse(startDate) - Date.now()));
 
+// Transform form data for server request and save in this way
 const transformData = ({ weather, image, flag, geoNames, data }) => ({
     departure_from: data.fromLocation,
     departure_point: geoNames.name,

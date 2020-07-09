@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
     endDate.addEventListener('focus', () => endDate.click());
     listOfTripsTrigger.addEventListener('click', buildList);
 
+    // Add event listener to form
     form.addEventListener('submit', (e) => {
         e.preventDefault();
         const data = { 

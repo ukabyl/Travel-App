@@ -1,9 +1,11 @@
 import { upperCaseArray, daysLeft } from "./utils";
 
+// Check form data in handling for any errors
 const checkFormData = (data) => {
     const errors = [];
 
     Object.keys(data).forEach((key) => {
+        console.log(data)
         if ( data[key].length === 0 ) {
             const arrayOfField = upperCaseArray(key);
             const formattedField = arrayOfField.map(text => text.toLowerCase());
