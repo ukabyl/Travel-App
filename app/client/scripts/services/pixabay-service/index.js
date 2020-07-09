@@ -1,3 +1,5 @@
+const axios = require('axios').default;
+
 export default class PixabayService {
 
     _baseUrl = 'https://pixabay.com/api/'
@@ -5,10 +7,8 @@ export default class PixabayService {
     _parameters = `&image_type=photo&pretty=true&category=places&orientation=horizontal`;
 
     getImage = async (city) => {
-        const image = await fetch(this._baseUrl + `?q=${city}` + this._parameters + this._key)
-            .then(data => data.json())
-            .then(data => data);
-        return image; 
+        const image = await axios.get(this._baseUrl + `?q=${city}` + this._parameters + this._key);
+        return image.data; 
     }
 
 }

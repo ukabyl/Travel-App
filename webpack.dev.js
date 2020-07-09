@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const HTMLWebpackPlaugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const WorkboxPlugin = require('workbox-webpack-plugin');
 
 const configs = {
     entry: path.resolve(__dirname, 'app/client/scripts/index.js'),
@@ -52,7 +53,8 @@ const configs = {
             verbose: true,
             cleanStaleWebpackAssets: true,
             protectWebpackAssets: false
-        })
+        }),
+        new WorkboxPlugin.GenerateSW()
     ]
 };
 

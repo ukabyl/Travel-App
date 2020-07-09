@@ -29,7 +29,7 @@ function addTrip(req, res) {
     if(!req.body) {
         res.status(400).json('Bad Request');
     } else {
-        const trip = req.body;
+        const trip = req.body.body;
         if(data.length) {
             let isHave = false;
             data.forEach(dataTrip => {

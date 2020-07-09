@@ -1,3 +1,4 @@
+const axios = require('axios').default;
 import { errorHandler } from './errorHandler';
 import { transformData } from './utils';
 
@@ -38,15 +39,10 @@ const formHandler = async (data) => {
         });
 
         ui.buildUi(transformedData);
-        const res = await fetch('http://localhost:8080/add', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(transformedData)
-        });
-        const trips = await res.json();
-        localStorage.setItem('trips', JSON.stringify(trips));
+        const res = await axios.post('http://localhost:8080/add', {
+            body: transformedData
+        }); 
+        localStorage.setItem('trips', JSON.stringify(res.data));
     
     } catch(e) {
         errorHandler(e.message);
