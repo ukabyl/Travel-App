@@ -28,7 +28,10 @@ npm run build-prod
 ```
 npm run test
 ```
+## -----------------------------------------------------
 
 ## Built With
 
 ### Node, Express, Webpack, SASS, JEST, Materialize.
+
+## -----------------------------------------------------
