@@ -3,6 +3,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
+// Create data array for trips
 const data = [];
 
 const app = express();
